@@ -1,4 +1,11 @@
 [[package]]
+name = "docker"
+version = "0.1.0"
+
+[[package]]
 name = "ship_wreck"
 version = "0.1.0"
+dependencies = [
+ "docker 0.1.0",
+]
 
