@@ -1,28 +1,21 @@
 extern crate docker;
 
-pub fn string_return() -> String {
-    let s = String::from("a mutable string");
-    s
-}
-
 pub fn get_default_client() -> docker::client::Client {
     let c = docker::client::Client { connection: "/var/run/docker.sock".to_string() };
     c
 }
+
+// pub fn connect_client() {
+// docker::client::Client::connect_default();
+// }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn a_string_test() {
-        let t = string_return();
-        assert_eq!(t, "a mutable string");
+    fn a_client_test() {
+        let c = get_default_client();
+        assert_eq!(c.connection, "/var/run/docker.sock");
     }
-
-    // #[test]
-    // fn a_client_test() {
-    //     let t = string_return();
-    //     assert_eq!(t, "a mutable string");
-    // }
 }

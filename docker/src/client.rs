@@ -1,19 +1,19 @@
-use std::os::unix::net::UnixStream;
+use std::os::unix::net::*;
 use std::io::prelude::*;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Client {
     pub connection: String,
 }
 
 impl Client {
-    pub fn connect_default() {
-        let mut stream = UnixStream::connect("/var/run/docker.sock").unwrap();
-        stream.write_all(b"/containers/json").unwrap();
-
+    pub fn connect_default(self) {
+        let mut stream = UnixStream::connect(self.connection).unwrap();
+        stream
+            .write_all(b"GET /containers/json HTTP/1.0\r\n\r\n")
+            .unwrap();
         let mut response = String::new();
         stream.read_to_string(&mut response).unwrap();
-
         println!("{}", response);
     }
 }

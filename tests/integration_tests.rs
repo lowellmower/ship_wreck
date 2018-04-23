@@ -10,6 +10,7 @@ extern crate ship_wreck;
 
 #[test]
 fn returns_string() {
-    let t = ship_wreck::string_return();
-    assert_eq!(t, "a mutable string");
+    // let t = ship_wreck::string_return();
+    // assert_eq!(t, "a mutable string");
+    unimplemented!();
 }
