@@ -1,3 +1,7 @@
+extern crate ship_wreck;
+
 fn main() {
-    println!("Hello, world!");
+    let t = ship_wreck::string_return();
+
+    println!("{}", t);
 }

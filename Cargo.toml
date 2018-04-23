@@ -1,5 +1,5 @@
 [package]
-name = "ship-wreck"
+name = "ship_wreck"
 version = "0.1.0"
 authors = ["Lowell Mower <lowell.m.mower@gmail.com>"]
 
