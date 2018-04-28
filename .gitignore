@@ -1,4 +1,4 @@
-
 /target
-docker/target
+/docker/target
+/config/target
 **/*.rs.bk
