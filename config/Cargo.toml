@@ -1,8 +1,7 @@
 [package]
-name = "ship_wreck"
+name = "config"
 version = "0.1.0"
 authors = ["Lowell Mower <lowell.m.mower@gmail.com>"]
 
 [dependencies]
-docker = { path = "./docker" }
-config = { path = "./config" }
+yaml-rust = "0.4"

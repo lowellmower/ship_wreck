@@ -6,21 +6,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "docker"
-version = "0.1.0"
-
-[[package]]
 name = "linked-hash-map"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "ship_wreck"
-version = "0.1.0"
-dependencies = [
- "config 0.1.0",
- "docker 0.1.0",
-]
 
 [[package]]
 name = "yaml-rust"

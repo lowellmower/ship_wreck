@@ -1,13 +1,10 @@
 extern crate docker;
+extern crate config;
 
 pub fn get_default_client() -> docker::client::Client {
     let c = docker::client::Client { connection: "/var/run/docker.sock".to_string() };
     c
 }
-
-// pub fn connect_client() {
-// docker::client::Client::connect_default();
-// }
 
 #[cfg(test)]
 mod tests {
@@ -18,4 +15,13 @@ mod tests {
         let c = get_default_client();
         assert_eq!(c.connection, "/var/run/docker.sock");
     }
+}
+
+pub fn load_config() -> config::config::Config {
+    // load file
+    // parse attributes
+    let c = config::config::get_client_config();
+    println!("{:?}", c);
+    c
+    // configure client
 }
