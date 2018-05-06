@@ -5,5 +5,5 @@ bar:
     - 1
     - 2.0
 file: "test.yml"
-socket: "/var/run/docker.sock"
+connection: "/var/run/docker.sock"
 command: "dig example.com +short"
