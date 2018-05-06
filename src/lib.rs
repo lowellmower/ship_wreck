@@ -6,6 +6,11 @@ pub fn get_default_client() -> docker::client::Client {
     c
 }
 
+pub fn get_client_from_file(file: &str) -> docker::client::Client {
+    let config = load_config(file);
+    docker::client::Client { connection: config.connection }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -17,11 +22,7 @@ mod tests {
     }
 }
 
-pub fn load_config() -> config::config::Config {
-    // load file
-    // parse attributes
-    let c = config::config::get_client_config();
-    println!("{:?}", c);
-    c
-    // configure client
+fn load_config(file: &str) -> config::config::Config {
+    let c = config::config::get_client_config(file);
+    return c;
 }
