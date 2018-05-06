@@ -1,0 +1,3 @@
+file: "default.yml"
+connection: "/var/run/docker.sock"
+command: "dig example.com +short"
